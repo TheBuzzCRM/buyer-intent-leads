@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #F6F4EF;
+    --section-alt: #EFECE6;
+    --surface: #FFFFFF;
+    --primary-text: #1A1A1A;
+    --secondary-text: #5C5A57;
+    --accent: #C2A06F;
+    --border: rgba(0,0,0,0.08);
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-primary-text font-sans antialiased;
+    background-color: var(--background);
+    color: var(--primary-text);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+
+  a {
+    @apply text-accent hover:text-opacity-80 transition-colors duration-200;
+  }
+
+  ::selection {
+    @apply bg-accent/20 text-primary-text;
+  }
+}
+
+@layer components {
+  .container-narrow {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .surface-card {
+    @apply bg-surface rounded-xl border border-border shadow-soft p-6 md:p-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-accent text-white hover:bg-opacity-90 shadow hover:shadow-hover;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border border-border text-secondary-text hover:bg-surface hover:text-primary-text;
+  }
+}
